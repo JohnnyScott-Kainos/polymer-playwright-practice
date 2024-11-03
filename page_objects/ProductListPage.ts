@@ -4,12 +4,17 @@ import { HelperBase } from './helperBase'
 export class ProductListPage extends HelperBase {
 
     private readonly productList: Locator
+    private readonly url: string
     private readonly productItemInList: Locator
 
     constructor(page: Page) {
         super(page)
         this.productList = page.locator('shop-list')
         this.productItemInList = page.locator('.grid li')
+    }
+
+    async navigateTo(){
+        await this.page.goto(this.url)
     }
 
     /**

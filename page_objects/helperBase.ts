@@ -4,9 +4,13 @@ import { clothingDetails } from '../testData/data'
 export class HelperBase{
 
     readonly page: Page
+    private readonly shopLogoButton: Locator
+    private readonly cartButton: Locator
+
 
     constructor(page: Page){
         this.page = page
+        this.shopLogoButton = page.getByLabel('SHOP Home')
     }
 
     /**
@@ -15,6 +19,15 @@ export class HelperBase{
      */
     async waitForNumberOfSeconds(timeInSeconds: number){
         await this.page.waitForTimeout(timeInSeconds * 1000)
+    }
+
+    /**
+     * Clicks on the cart icon button
+     * - Number of items must be declared as this dynamically changes based on items in cart
+     * @param expectedNumberInCartIcon - Number of items that should be in the cart
+     */
+    async clickCartIconButton(expectedNumberInCartIcon: number){
+        await this.page.getByLabel(`Shopping cart: ${expectedNumberInCartIcon} items`).click()
     }
 
     /**
@@ -32,6 +45,14 @@ export class HelperBase{
      */
     async checkCorrectUrl(expectedUrlEnpoint: string){
         await expect(this.page).toHaveURL(expectedUrlEnpoint)
+    }
+
+    async checkShopLogoButtonIsVisible(){
+        await expect(this.shopLogoButton).toBeVisible()
+    }
+
+    async clickShopLogoButton(){
+        await this.shopLogoButton.click()
     }
 
 }

@@ -23,23 +23,23 @@ export class PageManager{
         this.checkoutPage = new CheckoutPage(page)
     }
 
-    onPolymerCartPage(){
+    onCartPage(){
         return this.cartPage
     }
 
-    onPolymerHomePage(){
+    onHomePage(){
         return this.homePage
     }
 
-    onPolymerProductPage(){
+    onProductPage(){
         return this.productPage
     }
 
-    onPolymerListPage(){
+    onListPage(){
         return this.productListPage
     }
 
-    onPolymerCheckoutPage(){
+    onCheckoutPage(){
         return this.checkoutPage
     }
 
