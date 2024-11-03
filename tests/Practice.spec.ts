@@ -11,32 +11,32 @@ test.beforeEach(async ({ page }) => {
     pm.onPolymerHomePage().navigateTo()
 })
 
-// test.describe('Home Page', () => {
+test.describe('Home Page', () => {
 
-//     // Loop over each clothing type
-//     for (const [clothingType, { expectedUrl }] of Object.entries(clothingDetails)) {
-//         // check main button for clothing type goes to correct url
-//         test(`'${clothingType} main section buttons should go to correct url'`, async ({ page }) => {
-//             await pm.onPolymerHomePage().clickMainSectionProductTypeButton(clothingType + ' Shop Now')
-//             await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
-//             await page.goBack()
+    // Loop over each clothing type
+    for (const [clothingType, { expectedUrl }] of Object.entries(clothingDetails)) {
+        // check main button for clothing type goes to correct url
+        test(`'${clothingType} main section buttons should go to correct url'`, async ({ page }) => {
+            await pm.onPolymerHomePage().clickMainSectionProductTypeButton(clothingType + ' Shop Now')
+            await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
+            await page.goBack()
 
-//         })
+        })
 
-//         // check menu button for clothing type goes to correct url
-//         test(`${clothingType} menu button should go to correct url`, async ({ page }) => {
-//             await pm.onPolymerHomePage().clickMenuProductTypeButton(clothingType)
-//             await pm.onPolymerListPage().waitForNumberOfSeconds(2)
-//             await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
-//             await page.screenshot({path: `screenshot/${clothingType}URL.png`})
-//             await page.goBack()
-//         })
-//     }
+        // check menu button for clothing type goes to correct url
+        test(`${clothingType} menu button should go to correct url`, async ({ page }) => {
+            await pm.onPolymerHomePage().clickMenuProductTypeButton(clothingType)
+            await pm.onPolymerListPage().waitForNumberOfSeconds(2)
+            await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
+            await page.screenshot({path: `screenshot/${clothingType}URL.png`})
+            await page.goBack()
+        })
+    }
 
-//     test('cart button should be visible', async () => {
-//         await pm.onPolymerHomePage().cartButtonShouldBeVisibleWithCorrectNumberOfItems(0)
-//     })
-// })
+    test('cart button should be visible', async () => {
+        await pm.onPolymerHomePage().cartButtonShouldBeVisibleWithCorrectNumberOfItems(0)
+    })
+})
 
 test.describe('Cart Tests', () => {
 
