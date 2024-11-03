@@ -38,52 +38,52 @@ test.beforeEach(async ({ page }) => {
 //     })
 // })
 
-// test.describe('Cart Tests', () => {
+test.describe('Cart Tests', () => {
 
-//     test('item should be in the cart when added - 2 items, size Large', async () => {
+    test('item should be in the cart when added - 2 items, size Large', async () => {
 
-//         const productCategory = "Men's Outerwear"
-//         const itemName = clothingDetails[productCategory].products[0].name
+        const productCategory = "Men's Outerwear"
+        const itemName = clothingDetails[productCategory].products[0].name
 
-//         // Go to mens outer wear and click on an item
-//         await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
-//         await pm.onPolymerListPage().clickOnAnItem(itemName)
+        // Go to mens outer wear and click on an item
+        await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
+        await pm.onPolymerListPage().clickOnAnItem(itemName)
 
-//         // add item to the cart
-//         await pm.onPolymerProductPage().selectItemSizeAndQuantity('L', '2')
-//         await pm.onPolymerProductPage().addItemToCart()
-//         await pm.onPolymerProductPage().cartButtonShouldBeVisibleWithCorrectNumberOfItems(2)
+        // add item to the cart
+        await pm.onPolymerProductPage().selectItemSizeAndQuantity('L', '2')
+        await pm.onPolymerProductPage().addItemToCart()
+        await pm.onPolymerProductPage().cartButtonShouldBeVisibleWithCorrectNumberOfItems(2)
 
-//         // Go to cart and check if item is there
-//         await pm.onPolymerProductPage().waitForNumberOfSeconds(1)
-//         await pm.onPolymerProductPage().clickViewCartButton()
-//         await pm.onPolymerCartPage().correctItemShouldBeInCart(itemName)
-//     })
+        // Go to cart and check if item is there
+        await pm.onPolymerProductPage().waitForNumberOfSeconds(1)
+        await pm.onPolymerProductPage().clickViewCartButton()
+        await pm.onPolymerCartPage().correctItemShouldBeInCart(itemName)
+    })
 
-//     test('cart should be empty after item added and deleted', async () => {
+    test('cart should be empty after item added and deleted', async () => {
 
-//         const productCategory = "Men's Outerwear"
-//         const itemName = clothingDetails[productCategory].products[2].name
-//         // Go to mens outer wear
-//         await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
+        const productCategory = "Men's Outerwear"
+        const itemName = clothingDetails[productCategory].products[2].name
+        // Go to mens outer wear
+        await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
 
-//         // add item to cart
-//         await pm.onPolymerListPage().clickOnAnItem(itemName)
-//         await pm.onPolymerProductPage().selectItemSizeAndQuantity('L', '2')
-//         await pm.onPolymerProductPage().addItemToCart()
+        // add item to cart
+        await pm.onPolymerListPage().clickOnAnItem(itemName)
+        await pm.onPolymerProductPage().selectItemSizeAndQuantity('L', '2')
+        await pm.onPolymerProductPage().addItemToCart()
 
-//         // check if item has added successfully
-//         await pm.onPolymerProductPage().waitForNumberOfSeconds(2)
-//         await pm.onPolymerProductPage().clickViewCartButton()
-//         await pm.onPolymerCartPage().correctItemShouldBeInCart(itemName)
+        // check if item has added successfully
+        await pm.onPolymerProductPage().waitForNumberOfSeconds(2)
+        await pm.onPolymerProductPage().clickViewCartButton()
+        await pm.onPolymerCartPage().correctItemShouldBeInCart(itemName)
 
-//         // Remove Item from cart
-//         await pm.onPolymerCartPage().deleteItemFromCartButton(itemName)
+        // Remove Item from cart
+        await pm.onPolymerCartPage().deleteItemFromCartButton(itemName)
 
-//         // Check if cart is now empty
-//         await pm.onPolymerCartPage().cartShouldBeEmpty()
-//     })
-// })
+        // Check if cart is now empty
+        await pm.onPolymerCartPage().cartShouldBeEmpty()
+    })
+})
 
 // test.describe('Product Listings', () => {
 
