@@ -85,50 +85,50 @@ test.describe('Cart Tests', () => {
     })
 })
 
-// test.describe('Product Listings', () => {
+test.describe('Product Listings', () => {
 
-//     test('Check if correct item is returned in product page when clicked', async () => {
-//         const productCategory = "Men's Outerwear"
-//         const itemName = clothingDetails[productCategory].products[3].name
+    test('Check if correct item is returned in product page when clicked', async () => {
+        const productCategory = "Men's Outerwear"
+        const itemName = clothingDetails[productCategory].products[3].name
 
-//         // Go to mens outer wear page
-//         await pm.onPolymerHomePage().clickMainSectionProductTypeButton("Men's Outerwear")
+        // Go to mens outer wear page
+        await pm.onPolymerHomePage().clickMainSectionProductTypeButton("Men's Outerwear")
 
-//         // Select Item
-//         await pm.onPolymerListPage().clickOnAnItem(itemName)
+        // Select Item
+        await pm.onPolymerListPage().clickOnAnItem(itemName)
 
-//         // check if correct item shows in product page
-//         await pm.onPolymerListPage().waitForNumberOfSeconds(1)
-//         await pm.onPolymerProductPage().checkIfProductIsCorrect(itemName)
+        // check if correct item shows in product page
+        await pm.onPolymerListPage().waitForNumberOfSeconds(1)
+        await pm.onPolymerProductPage().checkIfProductIsCorrect(itemName)
 
-//     })
+    })
 
-//     test('Back button on item goes back to correct item list', async () => {
-//         const productCategory = "Ladies Outerwear"
-//         const itemName = clothingDetails[productCategory].products[2].name
-//         const expectedUrl = clothingDetails[productCategory].expectedUrl
+    test('Back button on item goes back to correct item list', async () => {
+        const productCategory = "Ladies Outerwear"
+        const itemName = clothingDetails[productCategory].products[2].name
+        const expectedUrl = clothingDetails[productCategory].expectedUrl
 
-//         // go to mens outer wear annd click on an item
-//         await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
-//         await pm.onPolymerListPage().clickOnAnItem(itemName)
+        // go to mens outer wear annd click on an item
+        await pm.onPolymerHomePage().clickMainSectionProductTypeButton(productCategory)
+        await pm.onPolymerListPage().clickOnAnItem(itemName)
 
-//         // Click on back button
-//         await pm.onPolymerProductPage().waitForNumberOfSeconds(2)
-//         await pm.onPolymerProductPage().goBackToProductList()
+        // Click on back button
+        await pm.onPolymerProductPage().waitForNumberOfSeconds(2)
+        await pm.onPolymerProductPage().goBackToProductList()
 
-//         //Check if url is correct
-//         await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
+        //Check if url is correct
+        await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
 
-//     })
+    })
 
-//     for (const [clothingType, { expectedUrl, expectedProductCount }] of Object.entries(clothingDetails)) {
-//         test(`Should navigate to ${clothingType} and have correct number of items`, async ({ page }) => {
-//             await pm.onPolymerHomePage().clickMenuProductTypeButton(clothingType)
-//             await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
-//             await pm.onPolymerListPage().checkCorrectNumberOfProducts(expectedProductCount)
-//         })
-//     }
-// })
+    for (const [clothingType, { expectedUrl, expectedProductCount }] of Object.entries(clothingDetails)) {
+        test(`Should navigate to ${clothingType} and have correct number of items`, async ({ page }) => {
+            await pm.onPolymerHomePage().clickMenuProductTypeButton(clothingType)
+            await pm.onPolymerListPage().checkCorrectUrl(expectedUrl)
+            await pm.onPolymerListPage().checkCorrectNumberOfProducts(expectedProductCount)
+        })
+    }
+})
 
 
 test('Testing Actions', async()=>{
