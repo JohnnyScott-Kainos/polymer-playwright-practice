@@ -23,7 +23,6 @@ export default defineConfig({
   reporter: 'html',
   use: {
     baseURL: 'https://shop.polymer-project.org',
-    headless: false,
     trace: 'on-first-retry',
     video: 'on'
   },
