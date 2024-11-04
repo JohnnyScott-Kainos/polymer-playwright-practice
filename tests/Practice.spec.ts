@@ -119,6 +119,8 @@ test.describe('Product Listings', () => {
 
     test('Back button on item goes back to correct item list', async () => {
         const productCategory = "Ladies Outerwear"
+
+        // Data taken from data.ts file with details on products
         const itemName = clothingDetails[productCategory].products[2].name
         const expectedUrl = clothingDetails[productCategory].expectedUrl
 
@@ -142,10 +144,4 @@ test.describe('Product Listings', () => {
             await pm.onListPage().checkCorrectNumberOfProducts(expectedProductCount)
         })
     }
-})
-
-
-test('Testing Actions', async () => {
-    await pm.onHomePage().waitForNumberOfSeconds(2)
-    await pm.onHomePage().checkCorrectUrl('https://shop.polymer-project.org/')
 })
