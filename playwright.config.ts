@@ -24,7 +24,8 @@ export default defineConfig({
   use: {
     baseURL: 'https://shop.polymer-project.org',
     trace: 'on-first-retry',
-    video: 'on'
+    video: 'on',
+    screenshot: 'on',
   },
 
   projects: [

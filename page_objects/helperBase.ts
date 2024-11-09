@@ -43,16 +43,28 @@ export class HelperBase{
      * check the url on the page is what it is exected to be
      * @param expectedUrl - The expected url enpoint - e.g. 'Men's Outerwear' expected url would be "/list/mens_outerwear"
      */
-    async checkCorrectUrl(expectedUrlEnpoint: string){
+    async verifyCorrectUrl(expectedUrlEnpoint: string){
         await expect(this.page).toHaveURL(expectedUrlEnpoint)
     }
 
-    async checkShopLogoButtonIsVisible(){
+    async verifyShopLogoButtonIsVisible(){
         await expect(this.shopLogoButton).toBeVisible()
     }
 
     async clickShopLogoButton(){
         await this.shopLogoButton.click()
+    }
+
+    async verifyShopLogoButtonIsVisibleAndDirectsBackToHome(){
+        await this.waitForNumberOfSeconds(1)
+
+        // check shop logo button is visible and click it
+        await this.verifyShopLogoButtonIsVisible()
+        await this.clickShopLogoButton()
+        await this.waitForNumberOfSeconds(1)
+        
+        //check button click redirected to home page
+        await this.verifyCorrectUrl('/')
     }
 
 }
