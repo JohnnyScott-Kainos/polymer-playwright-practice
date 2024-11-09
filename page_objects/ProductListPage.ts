@@ -29,7 +29,7 @@ export class ProductListPage extends HelperBase {
      * Check that the page returns the expected number of results
      * @param expectedCount - The number you expect there to be
      */
-    async checkCorrectNumberOfProducts(expectedCount: number){
+    async verifyCorrectNumberOfProducts(expectedCount: number){
         await this.page.waitForTimeout(2000);
         const count = await this.page.locator('.grid li').count();
         expect(count).toEqual(expectedCount)

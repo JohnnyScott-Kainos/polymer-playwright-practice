@@ -1,0 +1,6 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1731171177634,577,MyFirstHttpTest,200,OK,Thread Group 1-1,text,false,"The operation lasted too long: It took 577 milliseconds, but should not have lasted longer than 450 milliseconds.",28283,126,1,1,https://shop.polymer-project.org/,550,0,303
+1731171178599,487,MyFirstHttpTest,200,OK,Thread Group 1-2,text,false,"The operation lasted too long: It took 487 milliseconds, but should not have lasted longer than 450 milliseconds.",28279,126,1,1,https://shop.polymer-project.org/,460,0,116
+1731171179595,508,MyFirstHttpTest,200,OK,Thread Group 1-3,text,false,"The operation lasted too long: It took 508 milliseconds, but should not have lasted longer than 450 milliseconds.",28279,126,1,1,https://shop.polymer-project.org/,463,0,101
+1731171180598,333,MyFirstHttpTest,200,OK,Thread Group 1-4,text,false,"The result was the wrong size: It was 28,279 bytes, but should have been less than or equal to 28,000 bytes.",28279,126,1,1,https://shop.polymer-project.org/,308,0,101
+1731171181598,473,MyFirstHttpTest,200,OK,Thread Group 1-5,text,false,"The operation lasted too long: It took 473 milliseconds, but should not have lasted longer than 450 milliseconds.",28279,126,1,1,https://shop.polymer-project.org/,442,0,98

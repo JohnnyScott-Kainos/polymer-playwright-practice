@@ -1,0 +1,26 @@
+name: CI/CD Pipeline
+
+on: [push, pull_request]
+
+jobs:
+  load-test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up JMeter
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y jmeter
+      
+      - name: Run JMeter Load Test
+        run: |
+          jmeter -n -t performanceTests/TestPlan.jmx -l performanceTests/results.jtl -e -o performanceTests/report_folder
+      
+      - name: Archive JMeter Results
+        if: always()
+        uses: actions/upload-artifact@v2
+        with:
+          name: jmeter-results
+          path: performanceTests/report_folder

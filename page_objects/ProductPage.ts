@@ -39,7 +39,7 @@ export class ProductPage extends HelperBase{
      * 
      * @param name 
      */
-    async checkIfProductIsCorrect(name: string){
+    async verifyIfProductIsCorrect(name: string){
         const itemTitle = this.page.getByRole('heading', { name: name })
         await expect(itemTitle).toBeVisible()
     }
@@ -52,7 +52,7 @@ export class ProductPage extends HelperBase{
      * 
      * @param expectedTitle 
      */
-    async checkItemTitleIsCorrect(expectedTitle: string){
+    async verifyItemTitleIsCorrect(expectedTitle: string){
         const title = this.page.getByRole('heading', { name: expectedTitle })
         await expect(title).toBeVisible()
     }
